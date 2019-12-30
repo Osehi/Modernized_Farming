@@ -1,2 +1,3 @@
-# Modernized_Farming
-This is an Android Blog App about adopting modernized farming practices in Ekpoma.
+# P-Phone Blog
+This is an Android Blog App showing reviews of users' mobile devices.
+
