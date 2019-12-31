@@ -13,4 +13,11 @@
     <string name="signUp_logo">Sign Up Logo</string>
     <string name="login_logo">Login Logo</string>
     <string name="floating_action_button">Floating Action Button</string>
+    <string name="on_list_username">Osehi Ehilen</string>
+    <string name="how_long_was_post_made">Since When</string>
+    <string name="edit_button">Edit Button</string>
+    <string name="post_title">Title</string>
+    <string name="post_description">Apple\'s new flagship phone is out\nand it definately has people talking.\nSo what\'s special
+    about new\ninstallment</string>
+    <string name="post_image">List Feed Post Image</string>
 </resources>
