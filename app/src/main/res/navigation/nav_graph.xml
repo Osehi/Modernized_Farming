@@ -9,7 +9,7 @@
         android:id="@+id/welcome"
         android:name="com.example.modernpractice.Welcome"
         android:label="fragment_welcome"
-        tools:layout="@layout/fragment_welcome" >
+        tools:layout="@layout/welcome" >
         <action
             android:id="@+id/action_welcome_to_login"
             app:destination="@id/login" />

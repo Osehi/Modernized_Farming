@@ -12,4 +12,5 @@
     <string name="forgot_password">Forgot Password?</string>
     <string name="signUp_logo">Sign Up Logo</string>
     <string name="login_logo">Login Logo</string>
+    <string name="floating_action_button">Floating Action Button</string>
 </resources>

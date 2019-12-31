@@ -19,7 +19,7 @@ class Welcome : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_welcome, container, false)
+        val view = inflater.inflate(R.layout.welcome, container, false)
 
         // initialize button and add a click listener to navigate
         val loginWelcomeButton = view.findViewById(R.id.loginId) as Button
