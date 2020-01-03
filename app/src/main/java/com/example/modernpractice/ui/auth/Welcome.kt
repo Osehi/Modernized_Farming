@@ -1,4 +1,4 @@
-package com.example.modernpractice
+package com.example.modernpractice.ui.auth
 
 
 import android.os.Bundle
@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.findNavController
+import com.example.modernpractice.R
 
 /**
  * A simple [Fragment] subclass.

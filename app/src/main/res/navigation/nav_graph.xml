@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/welcome"
-        android:name="com.example.modernpractice.Welcome"
+        android:name="com.example.modernpractice.ui.auth.Welcome"
         android:label="fragment_welcome"
         tools:layout="@layout/welcome" >
         <action
@@ -19,12 +19,12 @@
     </fragment>
     <fragment
         android:id="@+id/login"
-        android:name="com.example.modernpractice.Login"
+        android:name="com.example.modernpractice.ui.auth.Login"
         android:label="Login"
         tools:layout="@layout/login"/>
     <fragment
         android:id="@+id/signUp"
-        android:name="com.example.modernpractice.SignUp"
+        android:name="com.example.modernpractice.ui.auth.SignUp"
         android:label="SignUp"
         tools:layout="@layout/fragment_sign_up"/>
 </navigation>
