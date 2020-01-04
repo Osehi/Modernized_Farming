@@ -8,8 +8,8 @@
     <fragment
         android:id="@+id/welcome"
         android:name="com.example.modernpractice.ui.auth.Welcome"
-        android:label="fragment_welcome"
-        tools:layout="@layout/welcome" >
+        android:label="Welcome"
+        tools:layout="@layout/welcome">
         <action
             android:id="@+id/action_welcome_to_login"
             app:destination="@id/login" />
@@ -21,10 +21,23 @@
         android:id="@+id/login"
         android:name="com.example.modernpractice.ui.auth.Login"
         android:label="Login"
-        tools:layout="@layout/login"/>
+        tools:layout="@layout/login">
+        <action
+            android:id="@+id/action_login_to_feed"
+            app:destination="@id/feed" />
+    </fragment>
     <fragment
         android:id="@+id/signUp"
         android:name="com.example.modernpractice.ui.auth.SignUp"
         android:label="SignUp"
-        tools:layout="@layout/fragment_sign_up"/>
+        tools:layout="@layout/fragment_sign_up">
+        <action
+            android:id="@+id/action_signUp_to_feed"
+            app:destination="@id/feed" />
+    </fragment>
+    <fragment
+        android:id="@+id/feed"
+        android:name="com.example.modernpractice.ui.Feed"
+        android:label="Feed"
+        tools:layout="@layout/feed" />
 </navigation>

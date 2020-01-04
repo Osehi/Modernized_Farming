@@ -1,11 +1,9 @@
 package com.example.modernpractice.data
 
 import androidx.lifecycle.LiveData
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Query
-import androidx.room.Update
+import androidx.room.*
 
+@Dao
 interface PostDao {
 
     @Insert
@@ -17,9 +15,9 @@ interface PostDao {
     @Delete
     fun delete(post:Post)
 
-    @Query("DELETE FROM post_table")
-    fun deleteAllPosts()
+//    @Query("DELETE FROM post_table")
+//    fun deleteAllPosts()
 
     @Query("SELECT * FROM post_table")
-    fun getAllPost(): LiveData<List<Post>>
+    fun getAllPosts(): LiveData<List<Post>>
 }

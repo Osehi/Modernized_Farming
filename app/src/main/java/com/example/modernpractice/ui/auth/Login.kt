@@ -2,11 +2,15 @@ package com.example.modernpractice.ui.auth
 
 
 import android.os.Bundle
+import android.text.TextUtils
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.navigation.findNavController
 import com.example.modernpractice.R
+import kotlinx.android.synthetic.main.login.*
 
 /**
  * A simple [Fragment] subclass.
@@ -18,7 +22,20 @@ class Login : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.login, container, false)
+        val view =  inflater.inflate(R.layout.login, container, false)
+
+        // initialize login button and add a click listener to navigate
+        var loginButton = view.findViewById(R.id.loginButtonLId) as Button
+
+        loginButton.setOnClickListener {
+            if (!TextUtils.isEmpty(usernameLId.text.toString())
+                && !TextUtils.isEmpty(passwordLId.text.toString())
+                ){
+                view.findNavController().navigate(R.id.action_login_to_feed)
+            }
+        }
+
+        return view
     }
 
 

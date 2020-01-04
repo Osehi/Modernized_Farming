@@ -7,16 +7,17 @@
     tools:context=".ui.Feed">
 
 
+    <!--        tools:listitem="@layout/feed_list"/>-->
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewFeedId"
-        android:layout_width="409dp"
-        android:layout_height="729dp"
+        android:layout_width="412dp"
+        android:layout_height="606dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        tools:listitem="@layout/feed_list"/>
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageButton
         android:id="@+id/imageButton4"
