@@ -50,13 +50,12 @@
             app:destination="@id/addPost" />
         <argument
             android:name="title"
-            app:argType="string" />
+            app:argType="string"
+            android:defaultValue="Phone" />
         <argument
             android:name="description"
-            app:argType="string" />
-        <argument
-            android:name="image"
-            app:argType="reference" />
+            app:argType="string"
+            android:defaultValue="Samsung" />
     </fragment>
     <fragment
         android:id="@+id/addPost"

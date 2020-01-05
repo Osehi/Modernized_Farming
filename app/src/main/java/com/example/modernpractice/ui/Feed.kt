@@ -2,6 +2,7 @@ package com.example.modernpractice.ui
 
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -53,6 +54,15 @@ class Feed : Fragment() {
             }
 
         })
+
+        arguments?.let {
+            var args = FeedArgs.fromBundle(it)
+            Log.d("check", "Title:${args.title}, Description:${args.description}")
+
+            var post = Post("null", "${args.title}", "${args.description}")
+            postViewModel.insert(post)
+        }
+
 
 //        val postList= arrayListOf<Post>(
 //            Post(null, "Hello", "Wtf"),

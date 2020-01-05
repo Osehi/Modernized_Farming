@@ -1,19 +1,23 @@
 package com.example.modernpractice.ui
 
 
+import android.content.Context
 import android.media.Image
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.Toast
 import android.widget.Toast.LENGTH_LONG
+import androidx.navigation.findNavController
 
 import com.example.modernpractice.R
 import kotlinx.android.synthetic.main.add_post.*
+import kotlinx.android.synthetic.main.add_post.view.*
 
 /**
  * A simple [Fragment] subclass.
@@ -35,14 +39,23 @@ class AddPost : Fragment() {
         adToIt = view.findViewById(R.id.addTitleId)
         adToDescription = view.findViewById(R.id.addDescriptionId)
 
-        fun savePost(){
-//            var postImage:Image = adImageToIt.setImageResource(R.drawable.post1)
-            var title:String = adToIt.text.toString()
-            var description:String = adToDescription.text.toString()
+//        fun savePost(){
+////            var postImage:Image = adImageToIt.setImageResource(R.drawable.post1)
+//            var title:String = adToIt.text.toString()
+//            var description:String = adToDescription.text.toString()
+//
+//            if (title.trim().isEmpty() || description.trim().isEmpty()){
+//
+//                return;
+//            }
+//        }
+        var publish = view.findViewById(R.id.addPostId) as Button
 
-            if (title.trim().isEmpty() || description.trim().isEmpty()){
+        publish.setOnClickListener {
 
-            }
+            var action = AddPostDirections.actionAddPostToFeed(view.addTitleId.text.toString(), view.addDescriptionId.text.toString())
+
+            it.findNavController().navigate(action)
         }
 
 
