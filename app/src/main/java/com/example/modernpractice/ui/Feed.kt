@@ -6,9 +6,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.modernpractice.R
@@ -31,6 +34,11 @@ class Feed : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.feed, container, false)
+        // add floatActionButton
+        var linkfabButton = view.findViewById(R.id.floatActionButtonId) as ImageButton
+        linkfabButton.setOnClickListener {
+            view.findNavController().navigate(R.id.action_feed_to_addPost)
+        }
 
         var adapter = PostAdapter()
 

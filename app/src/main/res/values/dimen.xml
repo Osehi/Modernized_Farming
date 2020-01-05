@@ -2,4 +2,5 @@
 <resources>
     <dimen name="largeButtonTextSize">20sp</dimen>
     <dimen name="round_corner">12dp</dimen>
+    <dimen name="padding_parent_layout">16dp</dimen>
 </resources>

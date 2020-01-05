@@ -20,4 +20,8 @@
     <string name="post_description">Apple\'s new flagship phone is out\nand it definately has people talking.\nSo what\'s special
     about new\ninstallment</string>
     <string name="post_image">List Feed Post Image</string>
+    <string name="add_image">Add Image</string>
+    <string name="add_title">Title...</string>
+    <string name="add_description">Description</string>
+    <string name="add_publish">Publish</string>
 </resources>

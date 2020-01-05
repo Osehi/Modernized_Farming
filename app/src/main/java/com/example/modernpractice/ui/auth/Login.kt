@@ -25,7 +25,7 @@ class Login : Fragment() {
         val view =  inflater.inflate(R.layout.login, container, false)
 
         // initialize login button and add a click listener to navigate
-        var loginButton = view.findViewById(R.id.loginButtonLId) as Button
+        var loginButton = view.findViewById<Button>(R.id.loginButtonLId) as Button
 
         loginButton.setOnClickListener {
             if (!TextUtils.isEmpty(usernameLId.text.toString())

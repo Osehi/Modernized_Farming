@@ -12,10 +12,12 @@
         tools:layout="@layout/welcome">
         <action
             android:id="@+id/action_welcome_to_login"
-            app:destination="@id/login" />
+            app:destination="@id/login"
+            app:popUpTo="@+id/welcome" />
         <action
             android:id="@+id/action_welcome_to_signUp"
-            app:destination="@id/signUp" />
+            app:destination="@id/signUp"
+            app:popUpTo="@+id/welcome" />
     </fragment>
     <fragment
         android:id="@+id/login"
@@ -24,7 +26,8 @@
         tools:layout="@layout/login">
         <action
             android:id="@+id/action_login_to_feed"
-            app:destination="@id/feed" />
+            app:destination="@id/feed"
+            app:popUpTo="@+id/welcome" />
     </fragment>
     <fragment
         android:id="@+id/signUp"
@@ -33,11 +36,35 @@
         tools:layout="@layout/fragment_sign_up">
         <action
             android:id="@+id/action_signUp_to_feed"
-            app:destination="@id/feed" />
+            app:destination="@id/feed"
+            app:popUpTo="@+id/welcome" />
     </fragment>
     <fragment
         android:id="@+id/feed"
         android:name="com.example.modernpractice.ui.Feed"
         android:label="Feed"
-        tools:layout="@layout/feed" />
+        tools:layout="@layout/feed" >
+
+        <action
+            android:id="@+id/action_feed_to_addPost"
+            app:destination="@id/addPost" />
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="description"
+            app:argType="string" />
+        <argument
+            android:name="image"
+            app:argType="reference" />
+    </fragment>
+    <fragment
+        android:id="@+id/addPost"
+        android:name="com.example.modernpractice.ui.AddPost"
+        android:label="Add a new post"
+        tools:layout="@layout/add_post" >
+        <action
+            android:id="@+id/action_addPost_to_feed"
+            app:destination="@id/feed" />
+    </fragment>
 </navigation>
