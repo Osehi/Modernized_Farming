@@ -13,12 +13,14 @@ import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.modernpractice.R
 import com.example.modernpractice.adapter.PostAdapter
 import com.example.modernpractice.data.Post
 import com.example.modernpractice.viewModel.PostViewModel
+import kotlinx.android.synthetic.main.feed.*
 
 /**
  * A simple [Fragment] subclass.
@@ -37,17 +39,20 @@ class Feed : Fragment() {
         val view = inflater.inflate(R.layout.feed, container, false)
         // add floatActionButton
         var linkfabButton = view.findViewById(R.id.floatActionButtonId) as ImageButton
+        postViewModel = ViewModelProviders.of(this).get(PostViewModel::class.java)
+
         linkfabButton.setOnClickListener {
             view.findNavController().navigate(R.id.action_feed_to_addPost)
         }
 
-        var adapter = PostAdapter()
+
+        var adapter = PostAdapter(postViewModel)
 
         var displayList = view.findViewById<RecyclerView>(R.id.recyclerViewFeedId)
         displayList.layoutManager = LinearLayoutManager(this.activity!!.applicationContext)
         displayList.adapter = adapter
 
-        postViewModel = ViewModelProviders.of(this).get(PostViewModel::class.java)
+
         postViewModel.getAllPosts().observe(this, object : Observer<List<Post>>{
             override fun onChanged(t: List<Post>?) {
                 adapter.setPosts(t!!)
@@ -55,31 +60,20 @@ class Feed : Fragment() {
 
         })
 
+
+
+        // the create operation
         arguments?.let {
             var args = FeedArgs.fromBundle(it)
             Log.d("check", "Title:${args.title}, Description:${args.description}")
 
             var post = Post("null", "${args.title}", "${args.description}")
             postViewModel.insert(post)
+            Toast.makeText(context, "Post saved", Toast.LENGTH_LONG).show()
+
         }
 
 
-//        val postList= arrayListOf<Post>(
-//            Post(null, "Hello", "Wtf"),
-//            Post(null, "Hi", "Wttf")
-//
-//        )
-
-
-
-
-        // the recyclerview
-//        var displayList = view.findViewById<RecyclerView>(R.id.recyclerViewFeedId)
-        // layout the view in the recyclerView
-//        displayList.layoutManager = LinearLayoutManager(this.activity!!.applicationContext)
-        // pass the recyclerView to the adapter
-//        var adapter = PostAdapter()
-//        displayList.adapter = adapter
 
         return view
     }
