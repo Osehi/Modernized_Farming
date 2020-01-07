@@ -62,6 +62,9 @@
             android:id="@+id/action_feed_to_welcome"
             app:destination="@id/welcome"
             app:popUpTo="@+id/welcome" />
+        <action
+            android:id="@+id/action_feed_to_updatePost"
+            app:destination="@id/updatePost" />
     </fragment>
     <fragment
         android:id="@+id/addPost"
@@ -73,4 +76,9 @@
             app:destination="@id/feed"
             app:popUpTo="@+id/feed" />
     </fragment>
+    <fragment
+        android:id="@+id/updatePost"
+        android:name="com.example.modernpractice.ui.UpdatePost"
+        android:label="Update post"
+        tools:layout="@layout/update_post" />
 </navigation>

@@ -24,4 +24,6 @@
     <string name="add_title">Title...</string>
     <string name="add_description">Description</string>
     <string name="add_publish">Publish</string>
+    <string name="update">Update</string>
+    <string name="update_image">Update Image</string>
 </resources>
