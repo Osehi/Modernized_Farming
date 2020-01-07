@@ -41,6 +41,7 @@ class PostAdapter(val postViewModel: PostViewModel) :
 
     override fun onBindViewHolder(holder: PostAdapter.ViewHolder, position: Int) {
         holder.bindViews(list[position], position, listener)
+
     }
 
     fun getPostAt(position: Int): Post {
@@ -70,6 +71,7 @@ class PostAdapter(val postViewModel: PostViewModel) :
             editPostMade.setOnClickListener {
 
             }
+
 
             itemView.setOnClickListener {
                 val position = adapterPosition
