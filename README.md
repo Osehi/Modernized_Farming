@@ -20,12 +20,13 @@ The android app lets you:
  
  . delete your post
  
+ . update your post
+ 
  ## Libraries Used
  * Room
  * Navigation
  * ViewModel
  * LiveData
  * Lifecycles
- * Fragment
- * Layout
+ 
  
