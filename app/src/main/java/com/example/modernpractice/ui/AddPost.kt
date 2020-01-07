@@ -16,6 +16,7 @@ import android.widget.Toast.LENGTH_LONG
 import androidx.navigation.findNavController
 
 import com.example.modernpractice.R
+import com.example.modernpractice.data.Post
 import kotlinx.android.synthetic.main.add_post.*
 import kotlinx.android.synthetic.main.add_post.view.*
 
@@ -24,9 +25,9 @@ import kotlinx.android.synthetic.main.add_post.view.*
  */
 class AddPost : Fragment() {
 
-    private lateinit var adImageToIt:ImageButton
-    private lateinit var adToIt:EditText
-    private lateinit var adToDescription:EditText
+    private lateinit var adImageToIt: ImageButton
+    private lateinit var adToIt: EditText
+    private lateinit var adToDescription: EditText
 
 
     override fun onCreateView(
@@ -39,30 +40,20 @@ class AddPost : Fragment() {
         adToIt = view.findViewById(R.id.addTitleId)
         adToDescription = view.findViewById(R.id.addDescriptionId)
 
-//        fun savePost(){
-////            var postImage:Image = adImageToIt.setImageResource(R.drawable.post1)
-//            var title:String = adToIt.text.toString()
-//            var description:String = adToDescription.text.toString()
-//
-//            if (title.trim().isEmpty() || description.trim().isEmpty()){
-//
-//                return;
-//            }
-//        }
-        var publish = view.findViewById(R.id.addPostId) as Button
 
-        publish.setOnClickListener {
-
-            var action = AddPostDirections.actionAddPostToFeed(view.addTitleId.text.toString(), view.addDescriptionId.text.toString())
-
+        var punch = view.findViewById<Button>(R.id.addPostId)
+        punch.setOnClickListener {
+            var action = AddPostDirections.actionAddPostToFeed(
+                view.addTitleId.text.toString(),
+                view.addDescriptionId.text.toString()
+            )
             it.findNavController().navigate(action)
+
         }
 
 
         return view
     }
-
-
 
 
 }

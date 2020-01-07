@@ -51,11 +51,17 @@
         <argument
             android:name="title"
             app:argType="string"
-            android:defaultValue="Phone" />
+            android:defaultValue="@null"
+            app:nullable="true" />
         <argument
             android:name="description"
             app:argType="string"
-            android:defaultValue="Samsung" />
+            android:defaultValue="@null"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_feed_to_welcome"
+            app:destination="@id/welcome"
+            app:popUpTo="@+id/welcome" />
     </fragment>
     <fragment
         android:id="@+id/addPost"
@@ -64,6 +70,7 @@
         tools:layout="@layout/add_post" >
         <action
             android:id="@+id/action_addPost_to_feed"
-            app:destination="@id/feed" />
+            app:destination="@id/feed"
+            app:popUpTo="@+id/feed" />
     </fragment>
 </navigation>

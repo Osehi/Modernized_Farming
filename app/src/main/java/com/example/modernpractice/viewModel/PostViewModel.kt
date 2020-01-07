@@ -7,29 +7,29 @@ import androidx.lifecycle.ViewModel
 import com.example.modernpractice.data.Post
 import com.example.modernpractice.data.PostRepository
 
-class PostViewModel(application: Application):AndroidViewModel(application) {
+class PostViewModel(application: Application) : AndroidViewModel(application) {
 
     private var repository: PostRepository = PostRepository(application)
 
     private var allPosts: LiveData<List<Post>> = repository.getAllPosts()
 
-    fun insert(post:Post){
+    fun insert(post: Post) {
         repository.insert(post)
     }
 
-    fun update(post:Post){
+    fun update(post: Post) {
         repository.update(post)
     }
 
-    fun delete(post:Post){
+    fun delete(post: Post) {
         repository.delete(post)
     }
 
-//    fun deleteAllPosts(){
-//        repository.
-//    }
+    fun deleteAllPosts() {
+        repository.deleteAllPosts()
+    }
 
-    fun getAllPosts():LiveData<List<Post>>{
+    fun getAllPosts(): LiveData<List<Post>> {
         return allPosts
     }
 

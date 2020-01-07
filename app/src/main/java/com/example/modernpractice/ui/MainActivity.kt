@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity() {
         val navController = this.findNavController(R.id.myNavHostFragment1)
         NavigationUI.setupActionBarWithNavController(this, navController)
     }
+
     //  setup back-button at the top of the view page or screen
     override fun onSupportNavigateUp(): Boolean {
         val navController = this.findNavController(R.id.myNavHostFragment1)

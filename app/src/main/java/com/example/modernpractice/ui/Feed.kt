@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -28,17 +29,19 @@ import kotlinx.android.synthetic.main.feed.*
 class Feed : Fragment() {
 
 
-
-    private lateinit var postViewModel:PostViewModel
+    private lateinit var postViewModel: PostViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.feed, container, false)
+
         // add floatActionButton
         var linkfabButton = view.findViewById(R.id.floatActionButtonId) as ImageButton
+
         postViewModel = ViewModelProviders.of(this).get(PostViewModel::class.java)
 
         linkfabButton.setOnClickListener {
@@ -52,8 +55,12 @@ class Feed : Fragment() {
         displayList.layoutManager = LinearLayoutManager(this.activity!!.applicationContext)
         displayList.adapter = adapter
 
+        adapter.setOnItemClickListener(View.OnClickListener {
 
-        postViewModel.getAllPosts().observe(this, object : Observer<List<Post>>{
+        })
+
+
+        postViewModel.getAllPosts().observe(this, object : Observer<List<Post>> {
             override fun onChanged(t: List<Post>?) {
                 adapter.setPosts(t!!)
             }
@@ -61,19 +68,15 @@ class Feed : Fragment() {
         })
 
 
-
-        // the create operation
+        // create operation
         arguments?.let {
             var args = FeedArgs.fromBundle(it)
-            Log.d("check", "Title:${args.title}, Description:${args.description}")
 
             var post = Post("null", "${args.title}", "${args.description}")
+
             postViewModel.insert(post)
-            Toast.makeText(context, "Post saved", Toast.LENGTH_LONG).show()
-
+            Toast.makeText(context, "post saved", Toast.LENGTH_SHORT).show()
         }
-
-
 
         return view
     }
