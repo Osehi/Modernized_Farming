@@ -26,4 +26,5 @@
     <string name="add_publish">Publish</string>
     <string name="update">Update</string>
     <string name="update_image">Update Image</string>
+    <string name="load_image">Choose Image</string>
 </resources>

@@ -57,20 +57,18 @@ class PostAdapter(val postViewModel: PostViewModel) :
         var postTitle = itemView.findViewById(R.id.listFeedTitleId) as TextView
         var postDescription = itemView.findViewById(R.id.listFeedDescriptionId) as TextView
         var toDeleletButton = itemView.findViewById<ImageButton>(R.id.listFeedEditOptionId)
-        var editPostMade = itemView.findViewById<ImageView>(R.id.editPostId)
+
 
 
         fun bindViews(post: Post, position: Int, listener: View.OnClickListener?) {
-            postImage.setImageResource(R.drawable.post1) // not complete
+            postImage.setImageResource(R.drawable.post1)
             postTitle.text = post.title
             postDescription.text = post.description
             toDeleletButton.setOnClickListener {
                 postViewModel.delete(post)
             }
 
-            editPostMade.setOnClickListener {
 
-            }
 
 
             itemView.setOnClickListener {

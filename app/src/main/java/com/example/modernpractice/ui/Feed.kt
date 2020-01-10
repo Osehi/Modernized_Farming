@@ -56,9 +56,7 @@ class Feed : Fragment() {
         displayList.layoutManager = LinearLayoutManager(this.activity!!.applicationContext)
         displayList.adapter = adapter
 
-        adapter.setOnItemClickListener(View.OnClickListener {
 
-        })
 
 
         postViewModel.getAllPosts().observe(this, object : Observer<List<Post>> {

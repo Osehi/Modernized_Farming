@@ -9,16 +9,17 @@
 
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:padding="@dimen/padding_parent_layout"
     tools:context=".ui.AddPost">
 
 
-    <ImageButton
+    <ImageView
         android:id="@+id/addImageId"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
         android:contentDescription="@string/add_image"
+        android:scaleType="centerCrop"
         android:src="@drawable/addimage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,24 +29,24 @@
         android:id="@+id/addTitleId"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
         android:ems="10"
         android:hint="@string/add_title"
         android:inputType="textPersonName"
         android:textSize="@dimen/largeButtonTextSize"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addImageId" />
+        app:layout_constraintTop_toBottomOf="@+id/loadImageId" />
 
     <EditText
         android:id="@+id/addDescriptionId"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="@string/add_description"
-        android:paddingBottom="220dp"
         android:inputType="textMultiLine"
+        android:paddingBottom="150dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addTitleId" />
@@ -64,6 +65,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addDescriptionId" />
+
+    <Button
+        android:id="@+id/loadImageId"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/choose_image_btn"
+        android:text="@string/load_image"
+        android:textAllCaps="false"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/largeButtonTextSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addImageId" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
